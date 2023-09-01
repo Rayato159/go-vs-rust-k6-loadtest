@@ -75,5 +75,5 @@ vus............................: min=348      max=1000
 rust_http_duration_avg = (71.55 + 74.73 + 883.84) ms / 3 = 343.37 ms
 go_http_duration_avg   = (121.09 + 275.63 + 935.49) ms / 3 = 444.07 ms
 
-rust is faster than go by -> 100 % - ((343.37/444.07) * 100 %) = 33 % for avg of 250, 500 and 100 requests
+rust is faster than go by -> 100 % - ((343.37/444.07) * 100 %) = 33 % for avg of 250, 500 and 100 vus
 ```
