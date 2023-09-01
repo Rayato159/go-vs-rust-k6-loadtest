@@ -1,12 +1,16 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,
-  duration: '10s',
+  stages: [
+    { duration: '30s', target: 100 },
+    { duration: '30s', target: 1000 },
+    { duration: '30s', target: 10000 },
+  ],
 };
 
 export default function () {
-  http.get('http://host.docker.internal:3000');
+  const res = http.get('https://httpbin.test.k6.io/');
+  check(res, { 'status was 200': (r) => r.status == 200 });
   sleep(1);
 }
