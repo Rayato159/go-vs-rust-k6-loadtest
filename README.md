@@ -9,7 +9,7 @@ docker pull grafana/k6
 ```
 
 ```bash
-docker run --rm -i grafana/k6 run --out json=rust_100.json - <script.js
+docker run --rm -i grafana/k6 run - <script.js
 ```
 
 <h2>Compute Engine Spec</h2>
